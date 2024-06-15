@@ -1,5 +1,7 @@
 # blivechat GUI
 
+基于[sileence114/blivechatGUI](https://github.com/sileence114/blivechatGUI)更新
+
 用于 [blivechat]( https://github.com/xfgryujk/blivechat ) 的图形界面。
 
 有朋友在搞 Vtuber，像 blivechat 类似的项目能通过自定义 CSS 的方式在 OBS 上添加一个非常好看的聊天栏。但是想要在桌面端看到弹幕的话得要再开一个浏览器页面，十分不方便。就想写一个背景透明的浮窗浏览器。  
@@ -8,9 +10,9 @@
 写完了之后 [xfgryujk]( https://github.com/xfgryujk ) 觉得这个 [PR]( https://github.com/xfgryujk/blivechat/pull/50 ) 太大，就只好独立出来，于是就有了这个项目。
 
 
-| ![桌面截图]( https://github.com/sileence114/blivechatGUI/blob/master/document/screenshot-desktop.png ) | ![游戏截图]( https://github.com/sileence114/blivechatGUI/blob/master/document/screenshot-game.png ) |
-| :----: | :----: |
-| 桌面截图 | 游戏截图 |
+| ![桌面截图]( https://github.com/blunc233/blivechatGUI/blob/master/document/screenshot-desktop.png ) | ![游戏截图]( https://github.com/blunc233/blivechatGUI/blob/master/document/screenshot-game.png ) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                           桌面截图                           |                           游戏截图                           |
 
 
 ## 特性
@@ -31,7 +33,7 @@
 
 ### 一、发布版
 
-1. 下载[发布版]( https://github.com/sileence114/blivechatGUI/releases )（仅提供x64 Windows版）
+1. 下载[发布版]( https://github.com/blunc233/blivechatGUI/releases )（仅提供x64 Windows版）
 2. 双击 blivechatGUI.exe 运行，也可以像 blivechat 那样添加命令行参数。
   ```bat
   blivechatGUI.exe --host 127.0.0.1 --port 12450
@@ -42,13 +44,13 @@
 0. 由于使用了git子模块，clone时需要加上`--recursive`参数：
   > blivechatGUI 包含了 blivechat， blivechat 包含了 blivedm。
   ```bat
-  git clone --recursive https://github.com/sileence114/blivechatGUI.git
+  git clone --recursive https://github.com/blunc233/blivechatGUI.git
   ```
   如果已经clone，拉子模块的方法：
   ```bat
   git submodule update --init --recursive
   ```
-1. 安装依赖（Python 3.6+）：
+1. 安装依赖（Python 3.8+）：
   ```bat
   pip install -r requirements.txt
   ```
@@ -97,8 +99,9 @@ blivechatGUI 支持 blivechat 的所有命令行参数：
 若 Github 访问稳定，可复制 CSS 链接，通过【添加路径】按钮添加网络上的 CSS。
 > 上文的[桌面截图]( #blivechat-gui )用了**背景透明**、**隐藏滚动条**和**显示虚线边框**。
 
-* 背景透明 [transparent.css]( https://github.com/sileence114/blivechatGUI/raw/master/document/transparent.css )
-若没有自定义 CSS，悬浮窗的背景为白色属于正常现象，添加这段 CSS 可变透明。这段代码会覆盖其他 CSS 的背景色设置，添加了其他 CSS 时慎用。
+* 背景透明 [transparent.css]( https://github.com/blunc233/blivechatGUI/raw/master/document/transparent.css )
+  若没有自定义 CSS，悬浮窗的背景为白色属于正常现象，添加这段 CSS 可变透明。这段代码会覆盖其他 CSS 的背景色设置，添加了其他 CSS 时慎用。
+  
   ```css
   body{
     background-color: transparent !important;
@@ -107,24 +110,25 @@ blivechatGUI 支持 blivechat 的所有命令行参数：
     background-color: transparent !important;
   }
   ```
-* 隐藏滚动条 [hide-scrollbar.css]( https://github.com/sileence114/blivechatGUI/raw/master/document/hide-scrollbar.css )
-这个仅适用于 Chromium 和 Safari。
+* 隐藏滚动条 [hide-scrollbar.css]( https://github.com/blunc233/blivechatGUI/raw/master/document/hide-scrollbar.css )
+  这个仅适用于 Chromium 和 Safari。
+
   ```css
   body::-webkit-scrollbar {
     display: none;
   }
   ```
 
-* 显示**虚线边框** [border.css]( https://github.com/sileence114/blivechatGUI/raw/master/document/border.css )
+* 显示**虚线边框** [border.css]( https://github.com/blunc233/blivechatGUI/raw/master/document/border.css )
   ```css
   body{
     border: dotted;
   }
   ```
 
-* 渐变配色 [gradient-back-ground.css]( https://github.com/sileence114/blivechatGUI/blob/master/document/gradient-back-ground.css )
+* 渐变配色 [gradient-back-ground.css]( https://github.com/blunc233/blivechatGUI/blob/master/document/gradient-back-ground.css )
 
-  > 上文的[游戏截图]( https://github.com/sileence114/blivechatGUI#blivechat-gui )就是这个 CSS，太长，就不贴了。
+  > 上文的[游戏截图]( https://github.com/blunc233/blivechatGUI#blivechat-gui )就是这个 CSS，太长，就不贴了。
 
 ## PyInstaller 打包
 
