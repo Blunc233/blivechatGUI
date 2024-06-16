@@ -27,6 +27,6 @@ if __name__ == '__main__':
         [
             'data', 'frontend', 'log',
             'api', 'blivedm', 'models',
-            'config.py', 'main.py', 'update.py'
+            'config.py', 'main.py', 'update.py','services','utils','plugins','blcsdk'
         ]
     )
